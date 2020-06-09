@@ -156,8 +156,8 @@ var restaurants = [
 	"rating_text" : "Good"
 }
 ]
-
-restaurentRouter.route('/')
+function router(){
+	restaurentRouter.route('/')
     .get(function(req,res){
    // res.send(restaurants)
    res.render('restaurent',{tittle:'Restaurent page',restaurants:restaurants})
@@ -167,4 +167,7 @@ restaurentRouter.route('/details')
     .get(function(req,res){
     res.send('restaurent details')
 })
-module.exports= restaurentRouter;
+return restaurentRouter
+}
+
+module.exports= router;
